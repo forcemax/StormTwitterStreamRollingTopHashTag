@@ -18,8 +18,8 @@ import backtype.storm.generated.InvalidTopologyException;
 import backtype.storm.topology.TopologyBuilder;
 import backtype.storm.tuple.Fields;
 
-public class TwitterStreamRollingTopHashTagTopologyRunner {
-	private static final Logger LOGGER = LoggerFactory.getLogger(TwitterStreamRollingTopHashTagTopologyRunner.class);
+public class StormTwitterHashtagTopologyRunner {
+	private static final Logger LOGGER = LoggerFactory.getLogger(StormTwitterHashtagTopologyRunner.class);
 	private static final int TOP_N = 10;
 	
 	public static void main(String[] args) {
