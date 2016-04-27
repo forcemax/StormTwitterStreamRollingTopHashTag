@@ -1,6 +1,6 @@
 package com.embian.forcemax.twitter.util;
 
-import backtype.storm.tuple.Tuple;
+import org.apache.storm.tuple.Tuple;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 

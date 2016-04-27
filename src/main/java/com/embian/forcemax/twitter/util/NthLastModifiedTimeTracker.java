@@ -1,6 +1,6 @@
 package com.embian.forcemax.twitter.util;
 
-import backtype.storm.utils.Time;
+import org.apache.storm.utils.Time;
 import org.apache.commons.collections.buffer.CircularFifoBuffer;
 
 /**

@@ -39,7 +39,7 @@
 	
 	<properties>
 		<java-version>1.7</java-version>
-		<org.apache.storm>0.9.5</org.apache.storm>
+		<org.apache.storm>1.0.0</org.apache.storm>
 		<org.twitter4j>4.0.4</org.twitter4j>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>

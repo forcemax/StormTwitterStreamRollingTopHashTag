@@ -10,13 +10,14 @@ import com.embian.forcemax.twitter.bolt.ExtractHashTagBolt;
 import com.embian.forcemax.twitter.bolt.TotalRankingsBolt;
 import com.embian.forcemax.twitter.spout.TwitterSpout;
 
-import backtype.storm.Config;
-import backtype.storm.LocalCluster;
-import backtype.storm.StormSubmitter;
-import backtype.storm.generated.AlreadyAliveException;
-import backtype.storm.generated.InvalidTopologyException;
-import backtype.storm.topology.TopologyBuilder;
-import backtype.storm.tuple.Fields;
+import org.apache.storm.Config;
+import org.apache.storm.LocalCluster;
+import org.apache.storm.StormSubmitter;
+import org.apache.storm.generated.AlreadyAliveException;
+import org.apache.storm.generated.AuthorizationException;
+import org.apache.storm.generated.InvalidTopologyException;
+import org.apache.storm.topology.TopologyBuilder;
+import org.apache.storm.tuple.Fields;
 
 public class StormTwitterHashtagTopologyRunner {
 	private static final Logger LOGGER = LoggerFactory.getLogger(StormTwitterHashtagTopologyRunner.class);
@@ -24,13 +25,6 @@ public class StormTwitterHashtagTopologyRunner {
 	
 	public static void main(String[] args) {
 		Config config = new Config();
-
-		config.put(Config.TOPOLOGY_MAX_SPOUT_PENDING, 32*1024);
-		config.put(Config.TOPOLOGY_RECEIVER_BUFFER_SIZE, 8); // default 8
-		config.put(Config.TOPOLOGY_TRANSFER_BUFFER_SIZE, 32); // default 1024
-		config.put(Config.TOPOLOGY_EXECUTOR_RECEIVE_BUFFER_SIZE, 16*1024); // default 1024
-		config.put(Config.TOPOLOGY_EXECUTOR_SEND_BUFFER_SIZE, 16*1024); // default 1024
-		config.put(Config.STORM_MESSAGING_NETTY_MAX_RETRIES, 28); // default 12 (12 is too small)
 		config.setDebug(false);
 
 		TopologyBuilder builder = wireTopology();
@@ -51,6 +45,8 @@ public class StormTwitterHashtagTopologyRunner {
 			} catch (AlreadyAliveException e) {
 				LOGGER.error("{}", e);
 			} catch (InvalidTopologyException e) {
+				LOGGER.error("{}", e);
+			} catch (AuthorizationException e) {
 				LOGGER.error("{}", e);
 			}
 		}
