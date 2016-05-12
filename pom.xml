@@ -54,7 +54,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.embian.botexample.echobot.App</mainClass>
+							<mainClass>com.embian.forcemax.twitter.StormTwitterHashtagTopologyRunner</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>
