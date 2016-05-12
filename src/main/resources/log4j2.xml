@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="3">
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %c [%p] %m%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="trace">
+            <AppenderRef ref="STDOUT" level="INFO"/>
+        </Root>
+        <Logger name="org.apache.storm" level="WARN"/>
+        <Logger name="org.apache.zookeeper" level="WARN"/>
+        <Logger name="org.apache.storm.nimbus" level="ERROR"/>
+        <Logger name="org.apache.storm.localizer" level="ERROR"/>
+    </Loggers>
+</Configuration>
