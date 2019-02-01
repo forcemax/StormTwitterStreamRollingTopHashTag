@@ -6,8 +6,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<java-version>1.7</java-version>
-		<org.apache.storm>1.0.2</org.apache.storm>
+		<java-version>1.8</java-version>
+		<org.apache.storm>1.1.3</org.apache.storm>
 		<org.twitter4j>4.0.4</org.twitter4j>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
